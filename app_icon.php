@@ -9,7 +9,11 @@ $path_upload		= $path . 'uploads/';
 $path_zip			= $path . 'zip/';
 $path_upload_file	= $path_upload . identifier . '/';
 
-if (!is_dir($path_upload_file) && !file_exists($path_upload_file . 'icon.png')) die('{ "is_error" : 1 }');
+if (!is_dir($path_upload_file) && !file_exists($path_upload_file . 'icon.png'))
+{
+	echo '{ "is_error" : 1 }';
+	return;
+}
 
 folders($path_upload_file);
 
@@ -25,10 +29,8 @@ $zip_link = $path_dl . 'app-icon-' . $id_convert . '.zip';
 
 remove($path_upload_file);
 
-die('{
-	"is_success" : 1,
-	"hash" : "' . $id_convert . '"
-}');
+echo '{ "is_success" : 1, "hash" : "' . $id_convert . '" }';
+return;
 
 /**
  * Functions

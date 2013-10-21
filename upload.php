@@ -17,7 +17,7 @@ if (!check(array(
 	'weight'		=> $weight,
 	'extensions'	=> $extensions,
 	'size'			=> $size,
-	'resolution'	=> $resolution))) exit;
+	'resolution'	=> $resolution))) return;
 
 mkdir($path_folder, 0777, true);
 
