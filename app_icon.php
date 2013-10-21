@@ -1,7 +1,9 @@
 <?php
 
-define('identifier', $_GET['time']);
-define('hash', $_GET['time'] . rand());
+$get_request = $_GET;
+
+define('identifier', $get_request['time']);
+define('hash', $get_request['time'] . rand());
 
 $path				= '/homez.488/deswebcr/www/_code/app-icon/';
 $path_dl			= 'http://code.desweb-creation.fr/app-icon/zip/';
@@ -118,23 +120,7 @@ function icons($datas)
 	$src = imagecreatefrompng($datas['path_upload_file']);
 
 	foreach ($icons as $value)
-	{
-		// Imagemagick
 		exec('/usr/bin/convert -quality 72 ' . $datas['path_upload_file'] . ' -resize ' . $value['size'] . 'x' . $value['size'] . ' ' . $datas['path_upload'] . $value['path']);
-
-		// GD
-		/*$dst = imagecreatetruecolor($value['size'], $value['size']);
-
-		imagecopyresized($dst, $src, 0, 0, 0, 0, $value['size'], $value['size'], 1024, 1024);
-		// Imagick doesn't work but is installed
-		//$dst = resize($src, $value['size'], $value['size']);
-
-		$black = imagecolorallocate($dst, 0, 0, 0);
-
-		imagecolortransparent($dst, $black);
-
-		imagepng($dst, $datas['path_upload'] . $value['path'], 0);*/
-	}
 }
 
 function resize($file, $width, $height, $crop = false)

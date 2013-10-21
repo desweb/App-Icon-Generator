@@ -1,8 +1,11 @@
 <?php
 
-if (!file_exists($_FILES['icon']['tmp_name']) || !is_uploaded_file($_FILES['icon']['tmp_name'])) return;
+$get_request = $_GET;
+$file_request = $_FILES;
 
-define('identifier', $_GET['time']);
+if (!file_exists($file_request['icon']['tmp_name']) || !is_uploaded_file($file_request['icon']['tmp_name'])) return;
+
+define('identifier', $get_request['time']);
 
 $weight		= 1024 * 1024;
 $extensions	= array('png', 'PNG');
@@ -13,7 +16,7 @@ $path		= '/homez.488/deswebcr/www/_code/app-icon/uploads/';
 $path_folder= $path . identifier . '/';
 
 if (!check(array(
-	'file'			=> $_FILES['icon'],
+	'file'			=> $file_request['icon'],
 	'weight'		=> $weight,
 	'extensions'	=> $extensions,
 	'size'			=> $size,
@@ -21,7 +24,7 @@ if (!check(array(
 
 mkdir($path_folder, 0777, true);
 
-move_uploaded_file($_FILES['icon']['tmp_name'], $path_folder . 'icon.png');
+move_uploaded_file($file_request['icon']['tmp_name'], $path_folder . 'icon.png');
 
 /**
  * Functions
