@@ -116,8 +116,6 @@ function icons($datas)
 		array('path' => 'Android/drawable_hdpi/ic_launcher.png',	'size' => 72),
 		array('path' => 'Android/drawable_xhdpi/ic_launcher.png',	'size' => 96),
 		array('path' => 'Android/drawable_xxhdpi/ic_launcher.png',	'size' => 144));
-	
-	$src = imagecreatefrompng($datas['path_upload_file']);
 
 	foreach ($icons as $value)
 		exec('/usr/bin/convert -quality 72 ' . $datas['path_upload_file'] . ' -resize ' . $value['size'] . 'x' . $value['size'] . ' ' . $datas['path_upload'] . $value['path']);

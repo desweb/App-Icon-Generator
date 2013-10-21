@@ -42,7 +42,7 @@ function check($datas)
 
 	if ($icon_width != $datas['size']['width'] || $icon_height != $datas['size']['height']) return false;
 
-	list($icon_name, $icon_ext) = explode('.', $file['name']);
+	$icon_ext = explode('.', $file['name'])[1];
 
 	if(!in_array($icon_ext, $datas['extensions'])) return false;
 
