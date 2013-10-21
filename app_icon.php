@@ -1,6 +1,7 @@
 <?php
 
 define('identifier', $_GET['time']);
+define('hash', $_GET['time'] . rand());
 
 $path				= '/homez.488/deswebcr/www/_code/app-icon/';
 $path_dl			= 'http://code.desweb-creation.fr/app-icon/zip/';
@@ -16,7 +17,7 @@ icons(array(
 	'path_upload'		=> $path_upload_file,
 	'path_upload_file'	=> $path_upload_file . 'icon.png'));
 
-$id_convert = base_convert(identifier, 16, 10);
+$id_convert = base_convert(hash, 16, 10);
 
 zip($path_upload_file, $path_zip . 'app-icon-' . $id_convert . '.zip');
 
@@ -26,7 +27,7 @@ remove($path_upload_file);
 
 die('{
 	"is_success" : 1,
-	"path_dl" : "' . $zip_link . '"
+	"hash" : "' . $id_convert . '"
 }');
 
 /**

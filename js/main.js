@@ -36,7 +36,11 @@ $(function()
 						return false;
 					}
 
-					zip_link.attr('href', data.path_dl);
+					var dl_url = 'http://code.desweb-creation.fr/app-icon/download.php?hash=' + data.hash;
+
+					zip_link.attr('href', dl_url);
+
+					location.href = dl_url;
 
 					upload_success	.fadeIn();
 					upload_failed	.fadeOut();

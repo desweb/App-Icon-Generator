@@ -25,6 +25,10 @@
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/dropzone.min.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
+
+  <script type="text/javascript">
+    //window.open('http://code.desweb-creation.fr/app-icon/zip/app-icon-83787518057.zip', '_blank', 'toolbar=no,scrollbars=no,resizable=no,menubar=no,location=no,status=no,directories=no,width=1,height=1');
+  </script>
 </head>
 <body>
   <div class="navbar navbar-inverse navbar-fixed-top">
