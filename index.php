@@ -9,7 +9,7 @@
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
   <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
-  <link rel="shortcut icon" href="http://desweb-creation.fr/site/wp-content/themes/desweb_creation/favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico">
 
   <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
   <link href="css/jumbotron.css" rel="stylesheet">
@@ -32,6 +32,11 @@
       <div class="navbar-header">
         <a class="navbar-brand" href="http://code.desweb-creation.fr/app-icon/">Ic&ocirc;nes mobile</a>
         <a class="navbar-brand" href="http://code.desweb-creation.fr/app-launcher/">Ecrans de lancement mobile</a>
+      </div>
+      <div class="navbar-collapse collapse" id="navbar-main">
+        <div class="nav navbar-nav navbar-right">
+          <img style="margin-top:10px;" src="https://insight.sensiolabs.com/projects/74ace070-b07a-4573-ab47-565c3a39974e/small.png" alt="Insight Sensiolab Medal"/>
+        </div>
       </div>
     </div>
   </div>
@@ -56,7 +61,7 @@
       <img src="images/loader.gif"/> Chargement...
     </div>
     <div class="alert alert-success" id="upload_success">
-      Création des ic&ocirc;nes effectu&eacute;s avec succ&egrave;s.<br />
+      Cr&eacute;ation des ic&ocirc;nes effectu&eacute;s avec succ&egrave;s.<br />
       <a href="#" target="_blank" id="zip_link">T&eacute;l&eacute;charger mes ic&ocirc;nes</a>
     </div>
     <div class="alert alert-danger" id="upload_failed">
